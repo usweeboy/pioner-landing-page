@@ -1,0 +1,36 @@
+.slider {
+  position: relative;
+  z-index: 1;
+  &__btn {
+    top: 50%;
+    position: absolute;
+    padding: 12px;
+    text-align: center;
+    background-color: var(--light);
+    border-radius: 100%;
+    z-index: 2;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    transition: all var(--transition-duration);
+    @media (max-width: 400px) {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 8px;
+      & img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    &-prev {
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
+    &-next {
+      right: 0;
+      transform: translate(50%, -50%);
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--light-gray);
+      }
+    }
+  }
+}

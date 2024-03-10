@@ -1,0 +1,76 @@
+.menu {
+  padding-top: 16px;
+  @include flex-between;
+  @include main-text;
+  &__list {
+    display: flex;
+    gap: 44px;
+  }
+  &__link {
+    transition: color var(--transition-duration);
+    @media (hover: hover) {
+      &:hover {
+        color: var(--accent);
+      }
+    }
+  }
+  &__callback {
+    @include flex-between;
+    gap: 4px;
+    color: var(--accent);
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &__contacts {
+    display: none;
+  }
+}
+
+@include laptop {
+  .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 75%;
+    height: 100%;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--light);
+    box-shadow: 10px 0 13px -5px rgba(34,60,80,.2);
+    gap: 32px;
+    overflow-y: scroll;
+    padding: 20px;
+    padding-top: 24px;
+    justify-content: start;
+    transform: translateX(-150%);
+    transition: all .5s;
+    &.active {
+      transform: translateX(0);
+    }
+    &__list {
+      flex-direction: column;
+      gap: 24px;
+    }
+    &__contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+}
+
+@include mobile {
+  .menu {
+    &__content {
+      padding: 20px;
+    }
+    &__list {
+      flex-direction: column;
+    }
+  }
+}

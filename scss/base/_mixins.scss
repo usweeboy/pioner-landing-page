@@ -1,0 +1,40 @@
+@mixin laptop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 1020px) {
+    @content;
+  }
+}
+
+@mixin phablet {
+  @media (max-width: 780px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+
+@mixin main-text {
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
+
+  @include mobile {
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

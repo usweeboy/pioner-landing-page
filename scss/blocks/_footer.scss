@@ -1,0 +1,82 @@
+.footer {
+  background-color: var(--dark);
+  color: var(--light);
+  @include main-text;
+  &__top {
+    padding-block: 56px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    gap: 57px;
+  }
+  &__menu {
+    display: flex;
+    gap: 95px;
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+  &__list {
+    max-width: 155px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__copy {
+    padding-top: 16px;
+    padding-bottom: 24px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+@include tablet {
+  .footer {
+    &__content {
+       gap: 30px;
+    }
+    &__menu {
+      display: flex;
+      gap: 60px;
+    }
+  }
+}
+
+@include phablet {
+  .footer {
+    &__top {
+      flex-direction: column;
+      gap: 50px;
+    }
+    &__content {
+      gap: 50px;
+   }
+   &__menu {
+     display: flex;
+     gap: 90px;
+   }
+  }
+}
+
+@include mobile {
+  .footer {
+    &__top {
+      padding-block: 40px;
+      gap: 40px;
+    }
+    &__content {
+      flex-direction: column;
+      gap: 40px;
+    }
+    &__menu {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}

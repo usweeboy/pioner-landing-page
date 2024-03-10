@@ -1,0 +1,62 @@
+.news {
+  padding-block: var(--section-offset-desktop);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &__title {
+    margin-bottom: var(--margin-bottom-lg);
+  }
+  &__card {
+    background-color: var(--light-gray);
+    height: 100%;
+    min-height: 478px;
+    display: flex;
+    flex-direction: column;
+    &-inner {
+      padding: 16px 16px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    &-text {
+      margin-bottom: 20px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 28px;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    &-link {
+      color: var(--accent);
+      @include main-text;
+    }
+  }
+}
+
+@include tablet {
+  .news {
+    padding-block: var(--section-offset-tablet);
+  }
+}
+
+@include phablet {
+  .news {
+    &__title {
+      margin-bottom: var(--margin-bottom-md);
+    }
+  }
+}
+
+@include mobile {
+  .news {
+    padding-block: var(--section-offset-mobile);
+  }
+}

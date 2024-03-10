@@ -1,0 +1,19 @@
+.representation {
+  padding-top: var(--section-offset-desktop);
+  &__title {
+    margin-bottom: var(--margin-bottom-lg);
+  }
+  &__map-link path {
+    cursor: pointer;
+    transition: all var(--transition-duration);
+  }
+  &__map-link:hover path {
+    fill: #c3c3c3;
+  }
+}
+
+@include tablet {
+  .representation {
+    display: none;
+  }
+}

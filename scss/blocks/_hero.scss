@@ -1,0 +1,45 @@
+.hero {
+  padding-top: var(--section-offset-desktop);
+  &__top {
+    display: flex;
+    gap: 20px;
+    margin-bottom: var(--margin-bottom-lg);
+  }
+  &__title {
+    max-width: 580px;
+  }
+  &__description {
+    @include main-text;
+    margin-top: 26px;
+    max-width: 379px;
+  }
+}
+
+@include tablet {
+  .hero {
+    padding-top: var(--section-offset-tablet);
+  }
+}
+
+@include phablet {
+  .hero {
+    &__top {
+      gap: 8px;
+      flex-direction: column;
+      margin-bottom: var(--margin-bottom-md);
+    }
+    &__description {
+      margin-top: 0px;
+      max-width: 100%;
+    }
+  }
+}
+
+@include mobile {
+  .hero {
+    padding-top: var(--section-offset-mobile);
+    &__inner {
+      gap: 16px;
+    }
+  }
+}

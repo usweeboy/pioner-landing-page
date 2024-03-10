@@ -1,0 +1,86 @@
+.header {
+  &__top {
+    @include flex-between;
+    padding: 32px 0;
+    border-bottom: 1px solid var(--gray);
+  }
+  &__contacts {
+    @include flex-between;
+    gap: 40px;
+    text-align: right;
+  }
+  &-burger {
+    display: none;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    border: none;
+    cursor: pointer;
+    background: none;
+  }
+  &-burger span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    right: 0;
+    background-color: #4C5866;
+    border-radius: 12px;
+    transition: transform 400ms, opacity 400ms;
+  }
+  &-burger span:nth-child(1) {
+    transform: translateY(-8px);
+  }
+  &-burger span:nth-child(3) {
+    transform: translateY(8px);
+  }
+  &-burger.active span:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+  }
+  &-burger.active span:nth-child(2) {
+    transform: translateY(0px) rotate(-45deg);
+  }
+  &-burger.active span:nth-child(3) {
+    opacity: 0;
+  }
+}
+
+.contacts__questions, .contacts__consultations {
+  &-text {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  &-email, &-phone {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+    color: var(--accent);
+    @media (hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@include laptop {
+  .header {
+    &__contacts {
+      display: none;
+    }
+    &-burger {
+      display: block;
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    &__top {
+      padding: 24px 0;
+    }
+  }
+  .logo {
+    width: 140px;
+    height: 30px;
+  }
+}
